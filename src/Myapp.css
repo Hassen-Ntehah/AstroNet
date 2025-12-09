@@ -1,0 +1,279 @@
+
+          :root {
+              --bg-dark: #020208;
+              --bg-panel: #152651;
+              --accent-cyan: #A2D8F6;
+              --accent-white: #D6F0FA;
+              --accent-blue: #5691B9;
+              --text-muted: #90B0C7;
+          }
+  
+          .space-app {
+              background-color: var(--bg-dark);
+              color: var(--accent-white);
+              min-height: 100vh;
+              width: 100%;
+              overflow: hidden;
+              display: flex;
+              flex-direction: column;
+              position: relative;
+              font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+          }
+  
+          /* Background Effects */
+          .ambient-glow {
+              position: absolute;
+              width: 600px;
+              height: 600px;
+              background: radial-gradient(circle, rgba(21, 38, 81, 0.4) 0%, rgba(2, 2, 8, 0) 70%);
+              top: -100px;
+              left: -100px;
+              z-index: 0;
+              pointer-events: none;
+          }
+  
+          .stars {
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              background-image: 
+                  radial-gradient(1px 1px at 50px 50px, white, transparent),
+                  radial-gradient(1px 1px at 150px 250px, white, transparent),
+                  radial-gradient(2px 2px at 350px 150px, white, transparent),
+                  radial-gradient(1px 1px at 750px 450px, white, transparent);
+              background-size: 550px 550px;
+              opacity: 0.3;
+              z-index: 0;
+          }
+  
+          /* Navigation */
+          nav {
+              padding: 2.5rem 4rem;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              z-index: 20;
+          }
+  
+          .logo {
+              font-weight: 700;
+              font-size: 1.25rem;
+              letter-spacing: 1px;
+              color: var(--accent-cyan);
+              text-transform: uppercase;
+          }
+  
+          .nav-links {
+              display: flex;
+              gap: 3rem;
+          }
+  
+          .nav-links a {
+              text-decoration: none;
+              color: var(--text-muted);
+              font-size: 0.9rem;
+              font-weight: 500;
+              transition: color 0.3s ease;
+              cursor: pointer;
+          }
+  
+          .nav-links a:hover, .nav-links a.active {
+              color: var(--accent-white);
+          }
+  
+          .nav-actions {
+              display: flex;
+              gap: 1.5rem;
+              align-items: center;
+          }
+  
+          .search-icon {
+              width: 20px;
+              height: 20px;
+              border: 2px solid var(--text-muted);
+              border-radius: 50%;
+              position: relative;
+              cursor: pointer;
+          }
+          
+          .search-icon::after {
+              content: '';
+              position: absolute;
+              width: 6px;
+              height: 2px;
+              background: var(--text-muted);
+              bottom: -2px;
+              right: -4px;
+              transform: rotate(45deg);
+          }
+  
+          /* Hero Section */
+          main {
+              flex: 1;
+              display: flex;
+              align-items: center;
+              padding: 0 4rem;
+              position: relative;
+              z-index: 10;
+          }
+  
+          .hero-text {
+              width: 45%;
+              z-index: 10;
+          }
+  
+          h1 {
+              font-size: 4.5rem;
+              line-height: 1.1;
+              margin-bottom: 1.5rem;
+              background: linear-gradient(135deg, #fff 0%, #A2D8F6 100%);
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+          }
+  
+          .sub {
+              color: var(--text-muted);
+              line-height: 1.6;
+              margin-bottom: 3rem;
+              max-width: 400px;
+              font-size: 1.1rem;
+          }
+  
+          .cta-btn {
+              background: linear-gradient(90deg, #455B9A, #5691B9);
+              border: none;
+              padding: 1rem 2.5rem;
+              border-radius: 50px;
+              color: white;
+              font-weight: 600;
+              cursor: pointer;
+              box-shadow: 0 10px 25px rgba(86, 145, 185, 0.4);
+              transition: transform 0.2s;
+          }
+  
+          .cta-btn:hover {
+              transform: translateY(-2px);
+          }
+  
+          /* Planet Visual */
+          .visual-container {
+              position: absolute;
+              right: -10%;
+              top: 50%;
+              transform: translateY(-50%);
+              width: 60%;
+              height: 80%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              pointer-events: none;
+          }
+  
+          .planet-glow {
+              width: 400px;
+              height: 400px;
+              background: radial-gradient(circle, var(--bg-panel), transparent 70%);
+              position: absolute;
+          }
+  
+          .planet {
+              width: 350px;
+              height: 350px;
+              border-radius: 50%;
+              background: linear-gradient(135deg, var(--bg-panel), #000);
+              box-shadow: inset -20px -20px 60px rgba(0,0,0,0.8),
+                          0 0 50px rgba(162, 216, 246, 0.1);
+              position: relative;
+              z-index: 2;
+          }
+  
+          .orbit {
+              position: absolute;
+              border: 1px solid rgba(162, 216, 246, 0.15);
+              border-radius: 50%;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+          }
+  
+          .orbit-1 { width: 500px; height: 500px; border-color: rgba(162, 216, 246, 0.1); }
+          .orbit-2 { width: 700px; height: 700px; border-color: rgba(162, 216, 246, 0.05); }
+  
+          .float-card {
+              position: absolute;
+              background: rgba(255, 255, 255, 0.03);
+              backdrop-filter: blur(10px);
+              padding: 1rem;
+              border-radius: 12px;
+              border: 1px solid rgba(255, 255, 255, 0.1);
+              color: var(--text-muted);
+              font-size: 0.8rem;
+              display: flex;
+              gap: 10px;
+              align-items: center;
+              z-index: 5;
+              animation: float 4s ease-in-out infinite;
+          }
+  
+          .float-card.one { top: 30%; right: 20%; animation-delay: 0s; }
+          .float-card.two { bottom: 25%; right: 35%; animation-delay: 2s; }
+  
+          .dot { width: 8px; height: 8px; background: var(--accent-cyan); border-radius: 50%; box-shadow: 0 0 10px var(--accent-cyan); }
+  
+          @keyframes float {
+              0%, 100% { transform: translateY(0); }
+              50% { transform: translateY(-15px); }
+          }
+  
+          /* Mobile Responsive Tweaks */
+          @media (max-width: 768px) {
+              .space-app {
+                  overflow-y: auto;
+                  height: auto;
+              }
+              nav {
+                  padding: 1.5rem;
+                  flex-direction: column;
+                  gap: 1rem;
+              }
+              .nav-links {
+                  gap: 1.5rem;
+                  flex-wrap: wrap;
+                  justify-content: center;
+              }
+              .nav-actions {
+                  display: none;
+              }
+              main {
+                  flex-direction: column;
+                  padding: 2rem 1.5rem;
+                  text-align: center;
+              }
+              .hero-text {
+                  width: 100%;
+                  margin-bottom: 3rem;
+              }
+              h1 {
+                  font-size: 3rem;
+              }
+              .sub {
+                  margin: 0 auto 2rem auto;
+              }
+              .visual-container {
+                  position: relative;
+                  right: auto;
+                  top: auto;
+                  transform: none;
+                  width: 100%;
+                  height: 400px;
+                  margin-top: 2rem;
+              }
+              .planet {
+                  width: 250px;
+                  height: 250px;
+              }
+              .orbit-1 { width: 300px; height: 300px; }
+              .orbit-2 { width: 400px; height: 400px; }
+              .float-card { display: none; }
+          }
+        
