@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import Navbar from '../Components/Navbar';
-import { Link } from 'react-router-dom';
 import Nav from "react-bootstrap/Nav";
 const History = () => {
   const [expandedCard, setExpandedCard] = useState(null);
@@ -162,7 +161,7 @@ const History = () => {
                 Explore the monumental history of space exploration, from the first satellite to the edges of the visible universe.
               </p>
               <button 
-                className="px-8 py-4 rounded-full text-white font-bold transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl"
+                className="px-6 py-3 md:px-8 md:py-4 rounded-full text-white text-sm md:text-base font-bold transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl"
                 style={{
                   background: 'linear-gradient(90deg, #455B9A, #5691B9, #EC4899)',
                   boxShadow: '0 10px 25px rgba(236, 72, 153, 0.4)',
@@ -205,7 +204,7 @@ const History = () => {
                 >
                   <div 
                     className={`h-full bg-panel/50 backdrop-blur-xl rounded-2xl border transition-all duration-300 transform ${
-                      isExpanded ? 'p-8 scale-105 z-50' : 'p-6 hover:-translate-y-2 hover:shadow-2xl'
+                      isExpanded ? 'p-4 sm:p-6 md:p-8 scale-100 md:scale-105 z-50' : 'p-4 sm:p-6 hover:-translate-y-2 hover:shadow-2xl'
                     }`}
                     style={{
                       borderColor: index % 2 === 0 
@@ -247,10 +246,10 @@ const History = () => {
                         {event.year}
                       </span>
                     </div>
-                    <h3 className={`font-bold text-white mb-3 mt-2 ${isExpanded ? 'text-3xl md:text-4xl' : 'text-xl md:text-2xl'}`}>
+                    <h3 className={`font-bold text-white mb-3 mt-2 ${isExpanded ? 'text-2xl sm:text-3xl md:text-4xl' : 'text-lg sm:text-xl md:text-2xl'}`}>
                       {event.title}
                     </h3>
-                    <p className={`text-muted leading-relaxed ${isExpanded ? 'text-lg mb-4' : ''}`}>
+                    <p className={`text-muted leading-relaxed text-sm sm:text-base ${isExpanded ? 'text-base sm:text-lg mb-4' : ''}`}>
                       {event.desc}
                     </p>
                     {isExpanded && (
@@ -304,9 +303,9 @@ const History = () => {
             </p>
           </div>
           
-          <Row className="grid grid-cols-2 gap-2">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {discoveries.map((item, index) => (
-              <Col md={4} key={index} className="mb-4">
+              <div key={index} className="mb-4">
                 <div 
                   className="h-full bg-panel/50 backdrop-blur-xl rounded-2xl overflow-hidden border transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl group"
                   style={{
@@ -347,15 +346,15 @@ const History = () => {
                     >
                       {item.year}
                     </div>
-                    <h3 className="text-xl md:text-2xl font-bold text-white mb-3">
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-3">
                       {item.title}
                     </h3>
-                    <p className="text-muted leading-relaxed mb-4">
+                    <p className="text-muted leading-relaxed mb-4 text-sm sm:text-base">
                       {item.desc}
                     </p>
                     <Nav.Link 
                     href={item.link}
-                      className="px-6 py-2.5 rounded-full text-white font-semibold text-sm transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-lg"
+                      className="px-4 py-2 sm:px-6 sm:py-2.5 rounded-full text-white font-semibold text-xs sm:text-sm transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-lg"
                       style={{
                         background: index % 2 === 0 
                           ? 'linear-gradient(90deg, #EC4899, #F472B6)'
@@ -369,9 +368,9 @@ const History = () => {
                     </Nav.Link>
                   </div>
                 </div>
-              </Col>
+              </div>
             ))}
-          </Row>
+          </div>
         </Container>
       </section>
 

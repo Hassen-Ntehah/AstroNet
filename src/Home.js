@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import brands from "./images/brands.webp";
 import Loading from "./Components/Loading";
-import HomeTest from "./Components/Hometest";
+import MoonSection from "./Components/MoonSection";
 import planet from "./icons/saturn.png";
 import satelite from "./icons/satellite (1).png";
 import telescope from "./icons/telescope (1).png";
-
+import Footer from "./Components/Footer";
 export default function Home() {
   const [dailyPic, setDailyPic] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -49,42 +48,36 @@ export default function Home() {
   ];
   return (
     <div className="bg-white dark:bg-dark text-white font-['Inter',-apple-system,BlinkMacSystemFont,'Segoe_UI',Roboto,sans-serif] overflow-x-hidden">
-      <HomeTest />
+      <MoonSection />
 
-      <div className="flex flex-col items-center justify-around h-screen bg-white dark:bg-dark ">
-          <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center justify-around min-h-screen py-12 md:py-0 md:h-screen bg-white dark:bg-dark px-4">
+          <div className="flex flex-col items-center mb-8 md:mb-0">
           <h4
-            className="text-5xl md:text-5xl text-dark dark:text-cyan font-semibold mb-6"
-            style={{
-              // background: "linear-gradient(135deg, #fff 0%, #A2D8F6 100%)",
-              // WebkitBackgroundClip: "text",
-              // WebkitTextFillColor: "transparent",
-              // backgroundClip: "text",
-            }}
+            className="text-3xl sm:text-4xl md:text-5xl text-dark dark:text-cyan font-semibold mb-4 md:mb-6 text-center"
+          
           >
             PHYSICS OF THE COSMOS
           </h4>
-          <p className="text-center text-gray-400">
+          <p className="text-center text-gray-400 text-sm sm:text-base px-4 max-w-3xl">
             You can also freely advertise with us, exchange links with us, or be
-            a member of our webring when you <br /> register. When you get to be
+            a member of our webring when you register. When you get to be
             a part of our webring, you get free exposure/traffic as visitors
-            click on the <br /> other member sites of the webring. You can
-            advertise your properties for sale or lease with us. And since{" "}
-            <br /> we are constantly on-line and browsing the web,
+            click on the other member sites of the webring. You can
+            advertise your properties for sale or lease with us. And since
+            we are constantly on-line and browsing the web,
           </p>
           </div>
-          <div className="grid grid-cols-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-4 w-full max-w-6xl px-4">
             {physicsOfTheCosmos.map((c) => {
-            return  <div key={c.title} className="flex flex-col items-center justify-center gap-2 w-3/4">
-                <img src={c.src} width={80}/>
-                <p className="text-lg text-bold text-gray-600 dark:text-white">{c.title}</p>
-                <p className="text-center text-gray-400 text-xs">{c.description}</p>
+            return  <div key={c.title} className="flex flex-col items-center justify-center gap-2 w-full">
+                <img src={c.src} width={80} className="w-16 md:w-20" alt=""/>
+                <p className="text-base md:text-lg font-bold text-gray-600 dark:text-white text-center">{c.title}</p>
+                <p className="text-center text-gray-400 text-xs sm:text-sm px-2">{c.description}</p>
               </div>;
             })}
           </div>
         </div>
       <section className="relative min-h-screen flex items-center justify-center py-20 px-4 md:px-8 lg:px-16">
-        {/* Background Effects */}
         <div
           className="absolute inset-0 -z-10"
           style={{
@@ -94,12 +87,10 @@ export default function Home() {
         ></div>
 
         <div className="w-full max-w-7xl mx-auto">
-          {/* Section Header */}
           <div className="text-center mb-12">
             <h2
               className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 bg-gradient-to-br from-[#020208] to-[#152651] dark:from-white dark:to-[#A2D8F6]"
               style={{
-                // background: "linear-gradient(135deg, #fff 0%, #A2D8F6 100%)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
@@ -188,9 +179,10 @@ export default function Home() {
                       >
                         Explore Archive
                       </Link>
-                      <button className="px-6 py-3 rounded-full border-2 border-cyan/50 text-cyan font-semibold hover:bg-cyan/10 transition-all duration-300">
-                        Learn More
-                      </button>
+                     <Link  to={`/image/${dailyPic.date}`} 
+                className="px-6 py-3 rounded-full border-2 border-cyan/50 text-cyan font-semibold hover:bg-cyan/10 transition-all duration-300">
+                        Learn More</Link>
+                      
                     </div>
                   </div>
                 </div>
@@ -206,38 +198,19 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Brands Section */}
       <section
-        className="relative w-screen h-screen flex flex-col justify-end items-center"
+        className="relative w-screen min-h-[400px] md:h-1/2 flex flex-col justify-end items-center p-2"
         style={{
           backgroundImage:
             'url("https://cdn.dribbble.com/userupload/24901544/file/original-baff0023954a2944d1539dfc2de39e9e.png?resize=1504x1128&vertical=center")',
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
-          backgroundAttachment: "fixed",
+          backgroundAttachment: "scroll",
         }}
       >
-        <div className="relative z-10 text-center">
-          {/* <h4
-            className="text-lg md:text-3xl font-semibold mb-6"
-            style={{
-              background: "linear-gradient(135deg, #fff 0%, #A2D8F6 100%)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundClip: "text",
-            }}
-          >
-            Powered by
-          </h4> */}
-          <div className="flex justify-center">
-            <img
-              src={brands}
-              alt="Brands"
-              className="h-16 md:h-32 w-auto object-contain filter drop-shadow-2xl"
-            />
-          </div>
-        </div>
+        <Footer/>
+       
       </section>
     </div>
   );

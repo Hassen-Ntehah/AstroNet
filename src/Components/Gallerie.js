@@ -1,30 +1,21 @@
 import React ,{useState} from 'react'
 import Container from "react-bootstrap/Container";
-import Spinner from "react-bootstrap/Spinner";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Image from "react-bootstrap/Image";
 import {Link} from "react-router-dom";
-import animationData from "../rocket launch.json"
-import Lottie from "lottie-react";
 import Loading from './Loading';
 
 export default function Gallerie ({ data }){
     const [hoveringon, sethoveringon] = useState("");
   
     return (
-      <Container className="pb-5">
-        <div className='grid grid-cols-3 sm:grid-cols-3 gap-x-2' >
+      <Container className="pb-5 px-4 md:px-8">
+        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6' >
           {data && data.length > 0 ? (
             data.map((d, index) => (
-              <Col
-                className="position-relative mb-4 "
+              <div
+                className="position-relative mb-4"
                 onMouseEnter={() => sethoveringon(d.title)}
                 onMouseLeave={() => sethoveringon("")}
                 key={index}
-                xs={12}
-                md={6}
-                lg={4}
               >
                 <Link 
                   to={`/image/${d.date}`} 
@@ -41,22 +32,22 @@ export default function Gallerie ({ data }){
                       <img 
                         src={d.url} 
                         alt={d.title}
-                        className="w-full h-[300px] object-cover transition-transform duration-500 group-hover:scale-110"
+                        className="w-full h-[250px] sm:h-[300px] object-cover transition-transform duration-500 group-hover:scale-110"
                         style={{
                           borderColor: 'transparent',
                         }}
                       />
                     ) : (
                       <div 
-                        className="w-full h-[300px] flex items-center justify-center rounded-xl"
+                        className="w-full h-[250px] sm:h-[300px] flex items-center justify-center rounded-xl"
                         style={{
                           background: 'linear-gradient(135deg, #020208, #152651)',
                           border: '1px solid rgba(86, 145, 185, 0.3)',
                         }}
                       >
                         <div className="text-center">
-                          <div className="text-4xl mb-2">🎬</div>
-                          <span className="text-white font-medium">Video Content</span>
+                          <div className="text-3xl sm:text-4xl mb-2">🎬</div>
+                          <span className="text-white text-sm sm:text-base font-medium">Video Content</span>
                         </div>
                       </div>
                     )}
@@ -88,7 +79,7 @@ export default function Gallerie ({ data }){
                     )}
                   </div>
                 </Link>
-              </Col>
+              </div>
             ))
           ) : (
             <div className="text-center w-100 mt-12 py-12">

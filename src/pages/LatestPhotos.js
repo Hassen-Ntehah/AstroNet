@@ -4,9 +4,9 @@ import Dropdown from "react-bootstrap/Dropdown";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/esm/Button";
 import Spinner from "react-bootstrap/Spinner";
-import Gallerie from "./Gallerie";
-import Loading from "./Loading";
-import Navbar from "./Navbar";
+import Gallerie from "../Components/Gallerie";
+import Loading from "../Components/Loading";
+import Navbar from "../Components/Navbar";
 
 export default function LatestPhotos() {
   const [data, setData] = useState([]);
@@ -51,30 +51,30 @@ export default function LatestPhotos() {
     <div className="min-h-screen bg-white dark:bg-dark text-white font-['Inter',-apple-system,BlinkMacSystemFont,'Segoe_UI',Roboto,sans-serif]">
       <Container className="pt-8 pb-12 px-4 md:px-6">
         <Navbar/>
-        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 gap-2 px-10">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 gap-4 px-2 sm:px-4 md:px-10">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold dark:text-white text-dark mb-2">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold dark:text-white text-dark mb-2">
               Captures
             </h2>
-            <p className="text-muted text-sm md:text-base">
+            <p className="text-muted text-xs sm:text-sm md:text-base">
               Explore the cosmos through NASA's Astronomy Picture of the Day archive
             </p>
           </div>
 
           <Dropdown autoClose="outside">
             <Dropdown.Toggle 
-              className="bg-blue hover:bg-cyan text-white border-0 px-6 py-2.5 rounded-full font-medium shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2 "
+              className="bg-blue hover:bg-cyan text-white border-0 px-4 py-2 sm:px-6 sm:py-2.5 rounded-full text-sm sm:text-base font-medium shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2"
               style={{
                 boxShadow: '0 10px 25px rgba(86, 145, 185, 0.4)',
               }}
               id="dropdown-basic"
             >
-              <span className="text-lg">📅</span>
+              <span className="text-base sm:text-lg">📅</span>
               <span>Filter Date</span>
             </Dropdown.Toggle>
 
             <Dropdown.Menu
-              className="p-6 shadow-2xl rounded-xl border-0 min-w-[320px] bg-panel z-50"
+              className="p-4 sm:p-6 shadow-2xl rounded-xl border-0 w-[90vw] sm:w-auto sm:min-w-[320px] bg-panel z-50"
               style={{
                 boxShadow: '0 20px 60px rgba(0, 0, 0, 0.5)',
                 border: '1px solid rgba(162, 216, 246, 0.1)',

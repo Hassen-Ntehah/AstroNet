@@ -1,18 +1,18 @@
 import React from "react";
 import Navbar from "./Navbar";
 
-const HomeTest = () => {
+const MoonSection = () => {
     return (
-      <div className="bg-white dark:bg-dark m-0 p-0 box-border font-['Inter',-apple-system,BlinkMacSystemFont,'Segoe_UI',Roboto,sans-serif] bg-dark text-white h-screen overflow-hidden flex flex-col relative">
+      <div className="bg-white dark:bg-dark m-0 p-0 box-border font-['Inter',-apple-system,BlinkMacSystemFont,'Segoe_UI',Roboto,sans-serif] bg-dark text-white min-h-screen md:h-screen overflow-hidden flex flex-col relative">
         
         <div 
           className="absolute -z-10 pointer-events-none"
           style={{
-            width: '600px',
-            height: '600px',
+            width: '300px',
+            height: '300px',
             background: 'radial-gradient(circle, rgba(21, 38, 81, 0.4) 0%, rgba(2, 2, 8, 0) 70%)',
-            top: '-100px',
-            left: '-100px',
+            top: '-50px',
+            left: '-50px',
           }}
         ></div>
         
@@ -33,27 +33,24 @@ const HomeTest = () => {
 
         <Navbar/>
   
-        <main className="flex-1 flex items-center px-16 relative">
-          <div className="w-[45%] z-10">
+        <main className="flex-1 flex items-center px-4 sm:px-8 md:px-16 relative py-8 md:py-0">
+          <div className="w-full md:w-[45%] z-10">
             <h1 
-              className="text-[4.5rem] leading-[1.1] mb-6 bg-gradient-to-br from-[#020208] to-[#152651] dark:from-white dark:to-[#A2D8F6] "
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] leading-[1.1] mb-4 md:mb-6 bg-gradient-to-br from-[#020208] to-[#152651] dark:from-white dark:to-[#A2D8F6] "
               style={{
-                // background: 'linear-gradient(135deg, #fff 0%, #A2D8F6 100%)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
               }}
             >
-              Discover the <br /> Universe
+              Discover the <br className="hidden sm:block" /> Universe
             </h1>
-            <p className="text-muted leading-relaxed mb-12 max-w-[400px] text-lg">
+            <p className="text-muted leading-relaxed mb-6 md:mb-12 max-w-[400px] text-base sm:text-lg">
               Embark on a journey through the cosmos. Experience the silence of space and the beauty of distant stars.
             </p>
             <button 
-              className="border-none px-10 py-4 rounded-[50px] bg-gradient-to-r from-[#455B9A] to-[#5691B9] text-white font-semibold cursor-pointer transition-transform hover:-translate-y-0.5"
-              style={{
-                // background: 'linear-gradient(90deg, #455B9A, #5691B9)',
-                
+              className="border-none px-6 py-3 sm:px-8 sm:py-3 md:px-10 md:py-4 rounded-[50px] bg-gradient-to-r from-[#455B9A] to-[#5691B9] text-white text-sm sm:text-base font-semibold cursor-pointer transition-transform hover:-translate-y-0.5"
+              style={{                
                 boxShadow: '0 10px 25px rgba(86, 145, 185, 0.4)',
               }}
             >
@@ -62,7 +59,7 @@ const HomeTest = () => {
           </div>
   
           <div 
-            className="absolute flex justify-center items-center pointer-events-none"
+            className="hidden md:flex absolute justify-center items-center pointer-events-none"
             style={{
               right: '-10%',
               top: '50%',
@@ -75,22 +72,21 @@ const HomeTest = () => {
             <div 
               className="absolute border rounded-full border-blue-light dark:opacity-5 dark:border-blue-light opacity-30"
               style={{
-                width: '700px',
-                height: '700px',
-                // borderColor: 'rgba(162, 216, 246, 0.05)',
+                width: '500px',
+                height: '500px',
                 top: '50%',
                 left: '50%',
                 transform: 'translate(-50%, -50%)',
               }}
+              
             ></div>
             
             {/* Orbit 1 */}
             <div 
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] border rounded-full  border-blue-light dark:opacity-5 dark:border-blue-light opacity-30"
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border rounded-full border-blue-light dark:opacity-5 dark:border-blue-light opacity-30"
               style={{
-                width: '500px',
-                height: '500px',
-                // borderColor: 'rgba(162, 216, 246, 0.1)',
+                width: '350px',
+                height: '350px',
                 top: '50%',
                 left: '50%',
                 transform: 'translate(-50%, -50%)',
@@ -101,8 +97,8 @@ const HomeTest = () => {
             <div 
               className="absolute"
               style={{
-                width: '400px',
-                height: '400px',
+                width: '280px',
+                height: '280px',
                 background: 'radial-gradient(circle, #152651, transparent 70%)',
               }}
             ></div>
@@ -111,16 +107,15 @@ const HomeTest = () => {
             <div 
               className="rounded-full relative z-[2]"
               style={{
-                width: '350px',
-                height: '350px',
+                width: '250px',
+                height: '250px',
                 background: 'linear-gradient(135deg, #152651, #000)',
                 boxShadow: 'inset -20px -20px 60px rgba(0,0,0,0.8), 0 0 50px rgba(162, 216, 246, 0.1)',
               }}
             ></div>
   
-            {/* Float Card 1 */}
             <div 
-              className="absolute bg-white/5 backdrop-blur-[10px] p-4 rounded-xl border border-white/10 text-muted text-sm flex gap-2.5 items-center z-[5] animate-float"
+              className="absolute bg-white/5 backdrop-blur-[10px] p-3 rounded-xl border border-white/10 text-muted text-xs flex gap-2 items-center z-[5] animate-float"
               style={{
                 top: '30%',
                 right: '20%',
@@ -130,8 +125,8 @@ const HomeTest = () => {
               <div 
                 className="rounded-full"
                 style={{
-                  width: '8px',
-                  height: '8px',
+                  width: '6px',
+                  height: '6px',
                   background: '#A2D8F6',
                   boxShadow: '0 0 10px #A2D8F6',
                 }}
@@ -139,9 +134,8 @@ const HomeTest = () => {
               <span>Kepler-186f</span>
             </div>
             
-            {/* Float Card 2 */}
             <div 
-              className="absolute bg-white/5 backdrop-blur-[10px] p-4 rounded-xl border border-white/10 text-muted text-sm flex gap-2.5 items-center z-[5] animate-float"
+              className="absolute bg-white/5 backdrop-blur-[10px] p-3 rounded-xl border border-white/10 text-muted text-xs flex gap-2 items-center z-[5] animate-float"
               style={{
                 bottom: '25%',
                 right: '35%',
@@ -151,8 +145,8 @@ const HomeTest = () => {
               <div 
                 className="rounded-full"
                 style={{
-                  width: '8px',
-                  height: '8px',
+                  width: '6px',
+                  height: '6px',
                   background: '#5691B9',
                   boxShadow: '0 0 10px #5691B9',
                 }}
@@ -165,4 +159,4 @@ const HomeTest = () => {
     );
   };
   
-  export default HomeTest;
+  export default MoonSection;
